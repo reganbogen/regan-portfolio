@@ -1,129 +1,222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio site for Regan, Compliance & Payroll Specialist">
-  <title>Regan — Compliance & Payroll Specialist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Regan Heckscher — Program & Grants Administration | Compliance | Social Justice Operations</title>
+  <meta name="description" content="Mission-driven operations professional: grants & program administration, compliance, logistics, communications, and data integrity." />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+    /* --- Base / Reset --- */
+    :root{
+      --bg:#ffffff; --fg:#111; --muted:#555; --accent:#2d5aeb; --line:#e8e8e8;
+      --chip:#f5f7ff; --chip-border:#dfe6ff;
     }
-    header {
-      background-color: #2a2a2a;
-      color: white;
-      padding: 2rem;
-      text-align: center;
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0e0f12; --fg:#eee; --muted:#bbb; --accent:#86a7ff; --line:#222; 
+        --chip:#151826; --chip-border:#202945;
+      }
     }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    h1 {
-      font-size: 2rem;
-      margin: 0;
-    }
-    h2 {
-      font-size: 1.25rem;
-      margin-top: 2rem;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.25rem;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 1.25rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      padding: 1rem 0;
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:900px;margin:0 auto;padding:28px 20px 60px}
+    header{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:24px}
+    h1{font-size:clamp(24px,4vw,34px);line-height:1.15;margin:0}
+    .title{color:var(--muted);font-size:clamp(13px,2vw,14px);letter-spacing:.2px}
+    .contact{font-size:14px;color:var(--muted)}
+    .contact a{margin-right:14px}
+    section{margin:28px 0}
+    h2{font-size:18px;margin:0 0 10px 0;letter-spacing:.3px}
+    p{margin:8px 0 0 0}
+    .summary{font-size:16px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .chip{padding:6px 10px;border:1px solid var(--chip-border);background:var(--chip);border-radius:999px;font-size:13px}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:760px){ .grid{grid-template-columns:1fr 1fr} }
+    .block{border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+    .role{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px}
+    .org{font-weight:600}
+    .when{color:var(--muted)}
+    ul{margin:8px 0 0 18px;padding:0}
+    li{margin:6px 0}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:34px;border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--muted)}
+    /* Print tweaks */
+    @media print{
+      .wrap{padding:0}
+      header{margin-bottom:12px}
+      a{text-decoration:none}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Regan Heckscher</h1>
-    <p>Compliance & Payroll Specialist | Tech-Fluent, Finance-Savvy | Remote-Ready</p>
-  </header>
-  <main>
-    <section>
-      <h2>Summary</h2>
-      <p>I’m a compliance-minded operations professional with a background spanning nonprofit finance, federal grant management, payroll oversight, cloud security auditing, and AI data review.
-      <p>My career began in the nonprofit world, where I managed federal grants, balanced complex budgets, ensured regulatory compliance, and led programs serving vulnerable populations. Over time, I built on that foundation with training in full-stack web development and hands-on experience in cloud security—deepening my technical fluency and positioning me to bridge operations and technology.
-      <p>Today, I’m combining my financial, regulatory, and technical skillsets to specialize in Regulatory Compliance and Payroll Operations, with a focus on remote-first roles in tech, finance, and AI-adjacent sectors. I bring high ethical standards, detailed documentation practices, and a passion for streamlining workflows through thoughtful systems design and cross-functional collaboration.</p>
+  <div class="wrap">
+    <header>
+      <div>
+        <!-- 👉 Replace with your preferred name formatting -->
+        <h1>Regan Heckscher</h1>
+        <div class="title">PROGRAM &amp; GRANTS ADMINISTRATION | COMPLIANCE | SOCIAL JUSTICE OPERATIONS</div>
+      </div>
+      <div class="contact">
+        <!-- 👉 Update these links/email -->
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" aria-disabled="true">City, State (Remote)</a>
+      </div>
+    </header>
+
+    <section aria-labelledby="summary">
+      <h2 id="summary">Profile</h2>
+      <p class="summary">
+        Mission-driven operations professional with 10+ years supporting nonprofit programs, grants, and compliance.
+        Known for clear organization, strong follow-through, and care for people and process. I keep data clean, calendars moving, 
+        and partners informed—combining social-work grounded empathy with practical, tech-literate execution.
+      </p>
+      <div class="chips" aria-label="Core competencies">
+        <span class="chip">Grant Administration &amp; Compliance</span>
+        <span class="chip">Program &amp; Event Logistics</span>
+        <span class="chip">Budget Monitoring &amp; Reconciliation</span>
+        <span class="chip">Donor/Grantee Communication (Mailchimp)</span>
+        <span class="chip">Cross-Department &amp; Partner Collaboration</span>
+        <span class="chip">Data Integrity &amp; Database Management</span>
+        <span class="chip">Technology Fluency (Office 365, CRMs)</span>
+        <span class="chip">Equity, Inclusion &amp; Belonging</span>
+      </div>
     </section>
 
-    <section>
-      <h2>Core Competencies</h2>
-      <ul>
-        <li>Payroll Administration & Reporting</li>
-        <li>Regulatory & Grant Compliance</li>
-        <li>Budget Oversight & Auditing</li>
-        <li>Risk & Ethics Documentation</li>
-        <li>Federal Grant Management</li>
-        <li>Internal Controls & Procedures</li>
-        <li>Cybersecurity & Data Compliance</li>
-        <li>AI-Aware Compliance & Risk Processes</li>
-        <li>Technical Tools (HTML/CSS, JavaScript, Python)</li>
-        <li>Cross-Functional Collaboration</li>
-      </ul>
-    </section>
-    
-    <section>
-      <h2>Selected Experience</h2>
+    <section aria-labelledby="experience">
+      <h1> Relevant Experience</h1>
+      <h2 id="experience">Grants &amp; Compliance</h2>
+
+      <!-- Grants & Compliance -->
+      <div class="block">
+        <div class="role">
+          <div class="org">Match Grant Coordinator — Kentucky Refugee Ministries</div>
+          <div class="when">2013–2016</div>
+        </div>
         <ul>
-          <li><strong>Compliance & Payroll Coordination (2012–2017):</strong> Oversaw payroll, federal grant compliance, budgeting, and donor tracking in nonprofit and retail settings.</li>
-          <li><strong>Security & Data Compliance (2021–Present):</strong> Audited cloud security environments, reviewed AI model outputs for compliance, and ensured documentation met ethical and technical standards.</li>
-          <li><strong>Web Development & Operations (2016–Present):</strong> Managed websites and online tools for small businesses and artist spaces; handled hosting, security, and financial logistics.</li>
+          <li>Managed $150k+ annual grant budget with on-time reporting and clean audits.</li>
+          <li>Aligned financial and program documentation with housing and employment requirements for refugee families.</li>
+          <li>Recognized as one of the nation’s top 10 Match Programs (2015) for documentation quality and impact.</li>
         </ul>
-</section>
+      </div>
 
+      <div class="block">
+        <div class="role">
+          <div class="org">Nonprofit Administrator — Squallis Puppeteers</div>
+          <div class="when">2015–2017</div>
+        </div>
+        <ul>
+          <li>Tracked donor records, prepared grant reports, and supported staff in meeting compliance standards.</li>
+          <li>Secured $20k in additional arts funding through successful grant writing and reporting.</li>
+          <li>Assisted with planning and facilitating workshops and community programs connecting funders, schools, and families.</li>
+        </ul>
+      </div>
 
-    <section>
-      <h2>Education & Certifications</h2>
-      <ul>
-        <li>In Progress: ADP Entry-Level Payroll Specialist Certificate (Coursera)</li>
-        <li>In Progress: Regulatory Compliance Specialization — University of Pennsylvania (Coursera)</li>
-        <li>Certified: Full Stack JavaScript & Front-End Web Development — Code Louisville</li>
-        <li>B.A. in Social Work — Cum Laude</li>
-      </ul>
+      <div class="block">
+        <div class="role">
+          <div class="org">Program Coordinator — Wellspring (Transitional Housing)</div>
+          <div class="when">2012–2013</div>
+        </div>
+        <ul>
+          <li>Managed program budget and prepared compliance reports for adults with severe mental illness.</li>
+          <li>Coordinated with treatment teams, staff, and community partners to align resources with care plans.</li>
+        </ul>
+      </div>
+
+      <!-- Admin & Logistical Support -->
+      <h2 style="margin-top:22px">Administrative &amp; Logistical Support</h2>
+
+      <div class="block">
+        <div class="role">
+          <div class="org">Retreat Property Manager &amp; Digital Bookings Coordinator</div>
+          <div class="when">2022–2023</div>
+        </div>
+        <ul>
+          <li>Oversaw scheduling, guest services, staff coordination, and vendor communications for a multi-unit retreat property.</li>
+          <li>Maintained booking platforms and synced calendars; coordinated clear email and phone communication.</li>
+          <li>Reconciled payments and expenses; ensured compliance with property policies and local requirements.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="role">
+          <div class="org">Store Manager — The UPS Store</div>
+          <div class="when">2016–2017</div>
+        </div>
+        <ul>
+          <li>Managed daily operations, scheduling, and staff oversight with accurate financial reconciliation.</li>
+          <li>Maintained compliance with shipping, insurance, and documentation requirements.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="role">
+          <div class="org">AI Data Annotation &amp; Training — Outlier (Contract)</div>
+          <div class="when">2023–Present</div>
+        </div>
+        <ul>
+          <li>Reviewed data for accuracy and consistency to support safe, reliable model development.</li>
+          <li>Documented processes and followed protocols in a fast-paced, deadline-driven environment.</li>
+        </ul>
+      </div>
+
+      <!-- Communications & Technical Projects -->
+      <h2 style="margin-top:22px">Communications &amp; Technical Projects</h2>
+
+      <div class="block">
+        <div class="role">
+          <div class="org">Freelance Front-End Developer &amp; Digital Coordinator</div>
+          <div class="when">2016–Present</div>
+        </div>
+        <ul>
+          <li>Built and maintained websites for nonprofits and artists; implemented accessible donation and intake pages.</li>
+          <li>Created and sent Mailchimp email updates for markets and retreat programs; kept lists current and segmented.</li>
+          <li>Automated light reporting (form-to-sheet, PDF generation) and kept web content accurate and up to date.</li>
+        </ul>
+        <p class="small">Selected sites: thefleaoffmarket.org • exomedicine.com • futurekillermusic.com • brookwood.house</p>
+      </div>
+
+      <div class="block">
+        <div class="role">
+          <div class="org">Cloud Security Engineer — Latacora</div>
+          <div class="when">2021–2022</div>
+        </div>
+        <ul>
+          <li>Supported audits of client cloud environments; documented findings and remediation steps.</li>
+          <li>Collaborated across teams to improve security practices and knowledge sharing.</li>
+        </ul>
+      </div>
     </section>
-    
-    <section>
-      <h2>Experience Timeline</h2>
-      <ul>
-        <li>2023–Now	AI Data Annotator (Contract)</li>
-        <li>2022-2023   Retreat Manager and Bookings Coordinator - <a href="https://www.brookwood.house/">Brookwood</a></li>
-        <li>2021–2022	Cloud Security Engineer – Latacora</li>
-        <li>2016–Now	Freelance Web Developer</li>
-        <li>2017-2020   ESL Teacher - Magic Ears</li>
-        <li>2016–2017	Manager - UPS Store</li>
-        <li>2015–2017	Administrator – Squallis Puppeteers Nonprofit</li>
-        <li>2013–2016	Match Grant Coordinator – Kentucky Refugee Ministries</li>
-        <li>2012–2013	Program Coordinator – Mental Health Housing - Wellspring</li>
-        <li>2010-2012   Case Manager Supervisor - Therapeutic Foster Care - Benchmark</li>
-        
-      </ul>
+
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <div class="grid">
+        <div class="block">
+          <div class="role">
+            <div class="org">B.S. Social Work, Cum Laude — University of Louisville</div>
+            <div class="when"></div>
+          </div>
+          <ul>
+            <li><em>Jeannette Comer Noelle Award</em> — Outstanding commitment to the dignity and uniqueness of each person and to social &amp; economic justice.</li>
+          </ul>
+        </div>
+        <div class="block">
+          <div class="role">
+            <div class="org">Certification — Full-Stack JavaScript &amp; Front-End Web Development</div>
+            <div class="when">Code Louisville</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: if you have this site address - I've given you my email</p>
-      <p>Location: Remote, USA</p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Regan. All rights reserved.
-  </footer>
+    <footer>
+      <div>Last updated: September 5, 2025</div>
+      <!-- Optional: add a link to a PDF version of your résumé if you have it in the repo -->
+      <!-- <div><a href="./Regan_Heckscher_Resume.pdf">Download PDF résumé</a></div> -->
+    </footer>
+  </div>
 </body>
 </html>
