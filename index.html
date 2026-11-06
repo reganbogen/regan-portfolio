@@ -3,219 +3,378 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Regan Heckscher — Program & Grants Administration | Compliance | Social Justice Operations</title>
-  <meta name="description" content="Mission-driven operations professional: grants & program administration, compliance, logistics, communications, and data integrity." />
+  <title>Regan Heckscher | Systems Architect</title>
+  <meta name="description" content="15 years building the connective tissue between human and technical systems, spanning community nonprofits and emerging technology. Internal platforms, AI agents, integrations, websites and the cloud infrastructure underneath." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    /* --- Base / Reset --- */
     :root{
-      --bg:#ffffff; --fg:#111; --muted:#555; --accent:#2d5aeb; --line:#e8e8e8;
-      --chip:#f5f7ff; --chip-border:#dfe6ff;
+      --bg:#fbfaf7; --fg:#16181d; --muted:#5b616e; --faint:#8a909c; --line:#e6e3dc;
+      --card:#ffffff; --accent:#1f5f5b; --accent-soft:#e3efed; --tag:#f1eee7;
     }
     @media (prefers-color-scheme: dark){
       :root{
-        --bg:#0e0f12; --fg:#eee; --muted:#bbb; --accent:#86a7ff; --line:#222; 
-        --chip:#151826; --chip-border:#202945;
+        --bg:#111317; --fg:#ecebe7; --muted:#a6abb5; --faint:#7d838e; --line:#262a31;
+        --card:#171a1f; --accent:#7cc4bc; --accent-soft:#1b2b2a; --tag:#1e2127;
       }
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);
+      font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:900px;margin:0 auto;padding:28px 20px 60px}
-    header{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:24px}
-    h1{font-size:clamp(24px,4vw,34px);line-height:1.15;margin:0}
-    .title{color:var(--muted);font-size:clamp(13px,2vw,14px);letter-spacing:.2px}
-    .contact{font-size:14px;color:var(--muted)}
-    .contact a{margin-right:14px}
-    section{margin:28px 0}
-    h2{font-size:18px;margin:0 0 10px 0;letter-spacing:.3px}
-    p{margin:8px 0 0 0}
-    .summary{font-size:16px}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .chip{padding:6px 10px;border:1px solid var(--chip-border);background:var(--chip);border-radius:999px;font-size:13px}
-    .grid{display:grid;grid-template-columns:1fr;gap:18px}
-    @media(min-width:760px){ .grid{grid-template-columns:1fr 1fr} }
-    .block{border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-    .role{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px}
-    .org{font-weight:600}
-    .when{color:var(--muted)}
+    .wrap{max-width:960px;margin:0 auto;padding:56px 24px 72px}
+
+    header{border-bottom:1px solid var(--line);padding-bottom:36px}
+    h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(34px,6vw,52px);line-height:1.05;margin:0;letter-spacing:-.5px}
+    .role-line{margin-top:10px;font-size:15px;font-weight:500;letter-spacing:.4px;text-transform:uppercase;color:var(--accent)}
+    .lede{font-family:Fraunces,Georgia,serif;font-size:clamp(21px,3vw,27px);line-height:1.35;margin:28px 0 0;max-width:780px}
+    .intro{color:var(--muted);max-width:720px;margin:18px 0 0}
+    .contact{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:22px;font-size:15px}
+    .contact span{color:var(--muted)}
+
+    section{margin-top:56px}
+    h2{font-size:13px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--faint);margin:0 0 18px}
+    h3{font-size:17px;margin:0;font-weight:600}
+
+    .spectrum{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+    .spectrum div{flex:1 1 150px;padding:14px 16px;border-right:1px solid var(--line);font-size:14px}
+    .spectrum div:last-child{border-right:0}
+    .spectrum b{display:block;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+    .spectrum span{color:var(--muted)}
+
+    .caps{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:720px){.caps{grid-template-columns:1fr 1fr}}
+    .cap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+    .cap p{margin:6px 0 0;color:var(--muted);font-size:15px}
+
+    .system{display:grid;grid-template-columns:1fr;gap:4px 28px;padding:20px 0;border-top:1px solid var(--line)}
+    .system:first-of-type{border-top:0;padding-top:0}
+    @media(min-width:760px){.system{grid-template-columns:220px 1fr}}
+    .system .meta{font-size:13px;color:var(--faint)}
+    .system p{margin:0;font-size:15px}
+    .system p+ul,.system ul+p{margin-top:10px}
+    .system ul{margin:10px 0 0;padding-left:18px;font-size:15px}
+    .system li{margin:4px 0}
+    .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+    .stack span{font-size:12px;padding:3px 9px;border-radius:999px;background:var(--tag);color:var(--muted)}
+
+    .job{padding:18px 0;border-top:1px solid var(--line)}
+    .job:first-of-type{border-top:0;padding-top:0}
+    .job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:baseline}
+    .job-head .when{font-size:14px;color:var(--faint);white-space:nowrap}
+    .org{color:var(--muted);font-weight:400}
+    .sector{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;
+      padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:8px;vertical-align:2px}
     ul{margin:8px 0 0 18px;padding:0}
-    li{margin:6px 0}
-    .small{font-size:13px;color:var(--muted)}
-    footer{margin-top:34px;border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--muted)}
-    /* Print tweaks */
+    li{margin:5px 0;font-size:15px}
+
+    .skills{display:grid;grid-template-columns:1fr;gap:16px 28px}
+    @media(min-width:720px){.skills{grid-template-columns:1fr 1fr}}
+    .skills h3{font-size:14px;margin-bottom:4px}
+    .skills p{margin:0;font-size:15px;color:var(--muted)}
+
+    .two{display:grid;grid-template-columns:1fr;gap:28px}
+    @media(min-width:720px){.two{grid-template-columns:1fr 1fr}}
+    .two p{margin:6px 0 0;font-size:15px;color:var(--muted)}
+
+    footer{margin-top:64px;border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--faint)}
+
     @media print{
       .wrap{padding:0}
-      header{margin-bottom:12px}
-      a{text-decoration:none}
+      section{margin-top:28px}
+      .cap,.spectrum{border-color:#ccc}
+      a{color:inherit}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
+
     <header>
-      <div>
-        <!-- 👉 Replace with your preferred name formatting -->
-        <h1>Regan Heckscher</h1>
-        <div class="title">PROGRAM &amp; GRANTS ADMINISTRATION | COMPLIANCE | SOCIAL JUSTICE OPERATIONS</div>
-      </div>
+      <h1>Regan Heckscher</h1>
+      <div class="role-line">Systems Architect · Web &amp; Internal Systems</div>
+      <p class="lede">15 years building the connective tissue between human and technical systems, spanning community nonprofits and emerging technology, always working alongside the people who use them.</p>
+      <p class="intro">I design and run the systems an organization runs on, and make sure they talk to each other. At IMXP that means the platform leadership uses to sell, house and track guests, built to carry every event the company runs; the AI agents that answer customer email and support the team; the websites, analytics and marketing data; and the cloud infrastructure underneath all of it. I start from the people involved: the teams who run the systems, the guests they serve, and what breaks when either is left out of the design. My path runs from frontline social work and federal grant administration, through a cloud security startup, to the center of a growing international events company.</p>
       <div class="contact">
-        <!-- 👉 Update these links/email -->
         <a href="mailto:rheckscher@gmail.com">rheckscher@gmail.com</a>
-        <a href="#" aria-disabled="true">Louisville, KY / Indianapolis, IN (Remote)</a>
+        <a href="https://github.com/reganbogen">github.com/reganbogen</a>
+        <span>Louisville, KY / Indianapolis, IN · Remote</span>
       </div>
     </header>
 
-    <section aria-labelledby="summary">
-      <h2 id="summary">Profile</h2>
-      <p class="summary">
-        Mission-driven operations professional with 10+ years supporting nonprofit programs, grants, and compliance.
-        Known for clear organization, strong follow-through, and care for people and process. I keep data clean, calendars moving, 
-        and partners informed—combining social-work grounded empathy with practical, tech-literate execution.
-      </p>
-      <div class="chips" aria-label="Core competencies">
-        <span class="chip">Grant Administration &amp; Compliance</span>
-        <span class="chip">Program &amp; Event Logistics</span>
-        <span class="chip">Budget Monitoring &amp; Reconciliation</span>
-        <span class="chip">Donor/Grantee Communication (Mailchimp)</span>
-        <span class="chip">Cross-Department &amp; Partner Collaboration</span>
-        <span class="chip">Data Integrity &amp; Database Management</span>
-        <span class="chip">Technology Fluency (Office 365, CRMs)</span>
-        <span class="chip">Equity, Inclusion &amp; Belonging</span>
+    <section aria-labelledby="spectrum">
+      <h2 id="spectrum">Range</h2>
+      <div class="spectrum">
+        <div><b>Frontline</b><span>Child welfare, mental health housing, refugee resettlement</span></div>
+        <div><b>Nonprofit</b><span>Federal grant programs, arts funding, boards and donors</span></div>
+        <div><b>Small business</b><span>Retail management, e-commerce production, hospitality</span></div>
+        <div><b>Startup</b><span>Cloud security consulting, AI model training</span></div>
+        <div><b>Growth company</b><span>Multi-event, multi-country technical operations</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="what">
+      <h2 id="what">What I do</h2>
+      <div class="caps">
+        <div class="cap">
+          <h3>Connect</h3>
+          <p>Make separate platforms work as one system. Ticketing, payments, CRM, email, Slack, Notion, analytics and ad accounts share data on a schedule, so every team works from the same numbers.</p>
+        </div>
+        <div class="cap">
+          <h3>Build</h3>
+          <p>Internal platforms and AI agents built from scratch for real operational problems: inventory control, rooming, deal tracking, marketing intelligence and customer support. Tested, documented and in daily use.</p>
+        </div>
+        <div class="cap">
+          <h3>Run &amp; secure</h3>
+          <p>Administer the cloud and SaaS estate across GCP, Vercel, Supabase, Cloudflare and Google Workspace: access, secrets, keyless deploys, monitoring and clean decommissioning. Background in cloud security engineering.</p>
+        </div>
+        <div class="cap">
+          <h3>Grow</h3>
+          <p>Design, build and maintain event websites, with SEO, search visibility in AI answer engines, analytics and conversion tracking tied back to actual sales.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="systems">
+      <h2 id="systems">Selected systems</h2>
+
+      <div class="system">
+        <div><h3>IMXP HQ</h3><div class="meta">IMXP · Company operations platform</div></div>
+        <div>
+          <p>The operating system for the company, built from scratch. It syncs every sale, application and guest from the event platform every 15 minutes and is the source of truth for physical inventory, enforcing shared limits on rooms, cabins and passes so overlapping offers can never oversell. Around that core:</p>
+          <ul>
+            <li><b>Rooming:</b> places guests into Nile cruise cabins and hotel rooms on real deck and site plans, reads onboarding answers to suggest roommates and flag conflicts, and tracks travel requests.</li>
+            <li><b>Deals:</b> a sales CRM that follows each buyer live from first contact to payment, with stages, owners, partners, targets, a pipeline report, and Slack and email updates.</li>
+            <li><b>Marketing:</b> one dashboard for ad spend, cost per sign-up by channel, email audiences, a map of site traffic, Google search data, and a radar that checks how ChatGPT and Gemini answer questions about the event.</li>
+            <li><b>Bespoke offers:</b> custom group packages built through Claude, each with its own proposal page and checkout.</li>
+          </ul>
+          <p>Deterministic, tested and audited where money and inventory are involved; AI only drafts, and a person decides. Phone-ready, with per-person access for staff and outside partners.</p>
+          <div class="stack"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>Postgres</span><span>Vercel</span><span>MCP</span><span>Claude</span><span>GA4</span><span>Customer.io</span></div>
+        </div>
+      </div>
+
+      <div class="system">
+        <div><h3>AI support desk</h3><div class="meta">IMXP · Customer email agent</div></div>
+        <div>
+          <p>An agent that works the event support inbox. It answers the questions the website and FAQ already cover, from a knowledge base rebuilt nightly from the live checkout, and fact-checks every reply against it before sending. It resends receipts on request, holds any answer that cites a date about to pass, and hands everything else to the right person with a summary and a draft. Staff stay in control from Gmail: reply and it steps back, label a thread to give it to the bot or keep it away.</p>
+          <div class="stack"><span>Python</span><span>Claude</span><span>Gmail API</span><span>Cloud Run</span><span>Cloud Scheduler</span><span>Slack API</span></div>
+        </div>
+      </div>
+
+      <div class="system">
+        <div><h3>AI team assistant</h3><div class="meta">IMXP · Slack, Notion, Drive</div></div>
+        <div>
+          <p>A Slack agent connected to the team's Notion tasks and sprints, shared Drive and calendars. Staff ask where work stands and get answers grounded in real project data; it routes creative requests from an intake form into Slack, and answers FAQs. Deploys automatically from GitHub with keyless credentials.</p>
+          <div class="stack"><span>Python</span><span>GCP Cloud Functions</span><span>GitHub Actions</span><span>Slack API</span><span>Notion API</span><span>Claude</span></div>
+        </div>
+      </div>
+
+      <div class="system">
+        <div><h3>Websites &amp; growth</h3><div class="meta">IMXP · Event sites</div></div>
+        <div>
+          <p>Full design, build and upkeep of event websites in Framer and Lovable, with custom code components, a spreadsheet-to-CMS sync for live updates, and performance and accessibility work. SEO and AI-search visibility, GA4 analytics bridged to the checkout, and conversion tracking to Meta, so marketing spend can be read against real sales.</p>
+          <div class="stack"><span>Framer</span><span>Lovable</span><span>React</span><span>GA4</span><span>Search Console</span><span>Meta Conversions API</span><span>Apps Script</span></div>
+        </div>
+      </div>
+
+      <div class="system">
+        <div><h3>Event platform operations</h3><div class="meta">IMXP · Four events, three continents</div></div>
+        <div>
+          <p>Configure and operate a multi-tenant event platform for gatherings in Iceland, Egypt, New Mexico and Australasia: ticketing and sales flows, application forms, accommodations and inventory, transactional email, payments and conversion tracking, driven through the platform API. Liaison between leadership and the external engineering team.</p>
+          <div class="stack"><span>REST APIs</span><span>Customer.io</span><span>Postmark</span><span>Meta Conversions API</span><span>Next.js</span><span>FastAPI</span></div>
+        </div>
+      </div>
+
+      <div class="system">
+        <div><h3>Operational data syncs</h3><div class="meta">IMXP · Full lifecycle</div></div>
+        <div>
+          <p>Scheduled pipelines feeding the teams who work in spreadsheets: crew advancing data from Airtable into the production command center, and live shuttle ticket sales into per-passenger transport manifests. Built, run through the event, then decommissioned cleanly while keeping the access other tools still rely on.</p>
+          <div class="stack"><span>Python</span><span>Cloud Scheduler</span><span>Airtable</span><span>Supabase</span><span>Google Sheets API</span></div>
+        </div>
+      </div>
+
+      <div class="system">
+        <div><h3>Attendee app</h3><div class="meta">Iceland Eclipse 2026</div></div>
+        <div>
+          <p>Shipped content and feature changes to the multilingual companion app for a total solar eclipse gathering: arrival guides, transport times, FAQs, with build-time translation checks and verification against production on every release.</p>
+          <div class="stack"><span>Next.js</span><span>i18n</span><span>Vercel</span><span>GitHub Actions</span></div>
+        </div>
+      </div>
+
+      <div class="system">
+        <div><h3>Independent builds</h3><div class="meta">Personal projects</div></div>
+        <div>
+          <p>A group coordination app driven by inbound SMS, with a passcode-gated board and push notifications. A private podcast pipeline that ingests archival audio, generates RSS, and serves it with range requests and visit logging. A capture tool for my band's songwriting.</p>
+          <div class="stack"><span>Cloudflare Workers</span><span>Pages</span><span>D1</span><span>R2</span><span>Twilio</span><span>PWA</span></div>
+        </div>
       </div>
     </section>
 
     <section aria-labelledby="experience">
-      <h1> Relevant Experience</h1>
-      <h2 id="experience">Grants &amp; Compliance</h2>
+      <h2 id="experience">Experience</h2>
 
-      <!-- Grants & Compliance -->
-      <div class="block">
-        <div class="role">
-          <div class="org">Match Grant Coordinator — Kentucky Refugee Ministries</div>
-          <div class="when">2013–2016</div>
+      <div class="job">
+        <div class="job-head">
+          <h3>Web &amp; Internal Systems <span class="org">· IMXP</span><span class="sector">Growth company</span></h3>
+          <div class="when">2025 – present</div>
         </div>
         <ul>
-          <li>Managed $150k+ annual grant budget with on-time reporting and clean audits.</li>
-          <li>Aligned financial and program documentation with housing and employment requirements for refugee families.</li>
-          <li>Recognized as one of the nation’s top 10 Match Programs (2015) for documentation quality and impact.</li>
+          <li>Central systems role across four international events: design, build and run the internal platforms, AI agents, integrations and websites the company operates on, and make sure they work together.</li>
+          <li>Built IMXP HQ, the company's operations platform for inventory, rooming, sales pipeline and marketing, now in daily use by leadership, sales and outside partners.</li>
+          <li>Built AI agents that answer customer email and support the team in Slack, with human control and fact-checking designed in.</li>
+          <li>Administer the event platform, cloud and SaaS stack: deploys, access, documentation and onboarding the team to AI tools.</li>
+          <li>Support the Chief Experience Officer and leadership with briefings and cross-team coordination across simultaneous events.</li>
         </ul>
       </div>
 
-      <div class="block">
-        <div class="role">
-          <div class="org">Nonprofit Administrator — Squallis Puppeteers</div>
-          <div class="when">2015–2017</div>
+      <div class="job">
+        <div class="job-head">
+          <h3>Cloud Security Engineer <span class="org">· Latacora</span><span class="sector">Startup</span></h3>
+          <div class="when">2021 – 2022</div>
         </div>
         <ul>
-          <li>Tracked donor records, prepared grant reports, and supported staff in meeting compliance standards.</li>
-          <li>Secured $20k in additional arts funding through successful grant writing and reporting.</li>
-          <li>Assisted with planning and facilitating workshops and community programs connecting funders, schools, and families.</li>
+          <li>Audited client cloud environments, identified vulnerabilities, and wrote security guidelines and remediation strategies.</li>
+          <li>Kept rigorous documentation and worked across teams on compliance and client-facing reporting.</li>
         </ul>
       </div>
 
-      <div class="block">
-        <div class="role">
-          <div class="org">Program Coordinator — Wellspring (Transitional Housing)</div>
-          <div class="when">2012–2013</div>
+      <div class="job">
+        <div class="job-head">
+          <h3>Web Developer &amp; Digital Coordinator <span class="org">· Freelance</span><span class="sector">Independent</span></h3>
+          <div class="when">2016 – present</div>
         </div>
         <ul>
-          <li>Managed program budget and prepared compliance reports for adults with severe mental illness.</li>
-          <li>Coordinated with treatment teams, staff, and community partners to align resources with care plans.</li>
+          <li>Design, build, host and maintain sites for nonprofits, artists and small businesses, including thefleaoffmarket.org and liberosis.org.</li>
+          <li>SEO, accessibility-conscious design, email campaigns, form-to-sheet automation and ongoing technical support.</li>
         </ul>
       </div>
 
-      <!-- Admin & Logistical Support -->
-      <h2 style="margin-top:22px">Administrative &amp; Logistical Support</h2>
-
-      <div class="block">
-        <div class="role">
-          <div class="org">Retreat Property Manager &amp; Digital Bookings Coordinator</div>
-          <div class="when">2022–2023</div>
+      <div class="job">
+        <div class="job-head">
+          <h3>AI Data Annotator <span class="org">· Outlier</span><span class="sector">AI</span></h3>
+          <div class="when">2023 – 2025</div>
         </div>
         <ul>
-          <li>Oversaw scheduling, guest services, staff coordination, and vendor communications for a multi-unit retreat property.</li>
-          <li>Maintained booking platforms and synced calendars; coordinated clear email and phone communication.</li>
-          <li>Reconciled payments and expenses; ensured compliance with property policies and local requirements.</li>
+          <li>Reviewed and annotated data for reinforcement learning from human feedback (RLHF) in deadline-driven remote work.</li>
         </ul>
       </div>
 
-      <div class="block">
-        <div class="role">
-          <div class="org">Store Manager — The UPS Store</div>
-          <div class="when">2016–2017</div>
+      <div class="job">
+        <div class="job-head">
+          <h3>Resident Caretaker &amp; Digital Bookings Coordinator <span class="org">· Brookwood House</span><span class="sector">Hospitality</span></h3>
+          <div class="when">2022 – 2023</div>
         </div>
         <ul>
-          <li>Managed daily operations, scheduling, and staff oversight with accurate financial reconciliation.</li>
-          <li>Maintained compliance with shipping, insurance, and documentation requirements.</li>
+          <li>Ran guest services, vendors, maintenance and logistics for a multi-unit retreat property; maintained its website, booking platforms and communications.</li>
         </ul>
       </div>
 
-      <div class="block">
-        <div class="role">
-          <div class="org">AI Data Annotation &amp; Training — Outlier (Contract)</div>
-          <div class="when">2023–Present</div>
+      <div class="job">
+        <div class="job-head">
+          <h3>Production &amp; Customer Specialist <span class="org">· WallplatesOnline.com</span><span class="sector">E-commerce</span></h3>
+          <div class="when">2017 – 2019</div>
         </div>
         <ul>
-          <li>Reviewed data for accuracy and consistency to support safe, reliable model development.</li>
-          <li>Documented processes and followed protocols in a fast-paced, deadline-driven environment.</li>
+          <li>Produced 100 to 300 custom UV-printed products daily and raised printing efficiency 20%; handled customer escalations and technical troubleshooting.</li>
         </ul>
       </div>
 
-      <!-- Communications & Technical Projects -->
-      <h2 style="margin-top:22px">Communications &amp; Technical Projects</h2>
-
-      <div class="block">
-        <div class="role">
-          <div class="org">Freelance Front-End Developer &amp; Digital Coordinator</div>
-          <div class="when">2016–Present</div>
+      <div class="job">
+        <div class="job-head">
+          <h3>Store Manager <span class="org">· The UPS Store</span><span class="sector">Small business</span></h3>
+          <div class="when">2016 – 2017</div>
         </div>
         <ul>
-          <li>Built and maintained websites for nonprofits and artists; implemented accessible donation and intake pages.</li>
-          <li>Created and sent Mailchimp email updates for markets and retreat programs; kept lists current and segmented.</li>
-          <li>Automated light reporting (form-to-sheet, PDF generation) and kept web content accurate and up to date.</li>
+          <li>Offered the management role mid-interview. Built new systems for printing, mailbox management and insurance claims; ran daily operations independently.</li>
         </ul>
-        <p class="small">Selected sites: thefleaoffmarket.org • exomedicine.com • futurekillermusic.com • brookwood.house</p>
       </div>
 
-      <div class="block">
-        <div class="role">
-          <div class="org">Cloud Security Engineer — Latacora</div>
-          <div class="when">2021–2022</div>
+      <div class="job">
+        <div class="job-head">
+          <h3>Nonprofit Administrator <span class="org">· Squallis Puppeteers</span><span class="sector">Nonprofit</span></h3>
+          <div class="when">2015 – 2017</div>
         </div>
         <ul>
-          <li>Supported audits of client cloud environments; documented findings and remediation steps.</li>
-          <li>Collaborated across teams to improve security practices and knowledge sharing.</li>
+          <li>Moved from board of directors to paid staff within six months: grants, donor tracking, events and budget.</li>
+          <li>Secured $20,000+ in new first-year arts funding through a Fund for the Arts partnership, 25% of the annual budget.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Match Grant Coordinator <span class="org">· Kentucky Refugee Ministries</span><span class="sector">Federal program</span></h3>
+          <div class="when">2013 – 2016</div>
+        </div>
+        <ul>
+          <li>Sole administrator of a federal alternative-to-welfare program for refugee families: enrollment, case management, budget, fund distribution and national reporting.</li>
+          <li>Program ranked among the top ten Match Grant programs in the country in 2015. Matched $166,000+ in federal funding through community donations and in-kind support.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Program Coordinator <span class="org">· Wellspring Ardery House</span><span class="sector">Behavioral health</span></h3>
+          <div class="when">2012 – 2013</div>
+        </div>
+        <ul>
+          <li>Ran a transitional housing program for adults with severe mental illness: supervised 13 staff, care plans, medication and daily operations.</li>
+          <li>Organized an agency-wide Thanksgiving dinner for 400 people within six months of starting.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Case Manager &amp; Supervisor <span class="org">· Benchmark Family Services</span><span class="sector">Child welfare</span></h3>
+          <div class="when">2010 – 2012</div>
+        </div>
+        <ul>
+          <li>Caseload of 15 foster children; promoted to supervisor within a year while keeping the caseload.</li>
+          <li>Reduced regional placement disruptions 30% through crisis intervention. Held the 24/7 emergency on-call line.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Remote ESL Instructor <span class="org">· Magic Ears</span><span class="sector">Edtech</span></h3>
+          <div class="when">2018 – 2021</div>
+        </div>
+        <ul>
+          <li>Taught live remote lessons to students in China across language and cultural differences.</li>
         </ul>
       </div>
     </section>
 
-    <section aria-labelledby="education">
-      <h2 id="education">Education</h2>
-      <div class="grid">
-        <div class="block">
-          <div class="role">
-            <div class="org">B.S. Social Work, Cum Laude — University of Louisville</div>
-            <div class="when"></div>
-          </div>
-          <ul>
-            <li><em>Jeannette Comer Noelle Award</em> — Outstanding commitment to the dignity and uniqueness of each person and to social &amp; economic justice.</li>
-          </ul>
+    <section aria-labelledby="skills">
+      <h2 id="skills">Toolkit</h2>
+      <div class="skills">
+        <div><h3>Cloud &amp; infrastructure</h3><p>Google Cloud (Functions, Scheduler, IAM, Workload Identity Federation), Cloudflare (Workers, Pages, R2, D1), Vercel, Supabase, GitHub Actions, Docker</p></div>
+        <div><h3>Languages &amp; frameworks</h3><p>Python, JavaScript, TypeScript, Next.js, React, FastAPI, SQL, Google Apps Script, HTML, CSS, Tailwind</p></div>
+        <div><h3>Integrations</h3><p>Google Workspace APIs and service accounts, Notion, Slack, Airtable, Twilio, Customer.io, Postmark, Meta Conversions API, Mailchimp, Framer</p></div>
+        <div><h3>AI</h3><p>LLM integration with Claude, Model Context Protocol (MCP) connectors, AI-assisted development, RLHF data work</p></div>
+        <div><h3>Security</h3><p>Cloud security auditing, least-privilege access design, secrets management, remediation guidance, decommissioning</p></div>
+        <div><h3>Operations</h3><p>Federal grant administration and reporting, budgets, compliance, staff supervision, case management, crisis de-escalation, vendor and stakeholder management</p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="more">
+      <h2 id="more">Education &amp; beyond work</h2>
+      <div class="two">
+        <div>
+          <h3>B.S. Social Work, Cum Laude</h3>
+          <p>University of Louisville, 2010. Jeannette Comer Noell Award for commitment to the dignity and uniqueness of each person and to social and economic justice.</p>
+          <h3 style="margin-top:16px">Full-Stack JavaScript &amp; Front-End Development</h3>
+          <p>Code Louisville, 2016</p>
         </div>
-        <div class="block">
-          <div class="role">
-            <div class="org">Certification — Full-Stack JavaScript &amp; Front-End Web Development</div>
-            <div class="when">Code Louisville</div>
-          </div>
+        <div>
+          <h3>Musician, recording engineer, animator</h3>
+          <p>Percussionist and multi-instrumentalist; performed at Carnegie Hall with the University of Louisville Wind Ensemble and Orchestra. Recorded, mixed and mastered two full-length albums independently and mixes for other artists. Stop-motion and digital animation for musicians, including Spotify canvases and event promotion.</p>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div>Last updated: September 5, 2025</div>
-      <!-- Optional: add a link to a PDF version of your résumé if you have it in the repo -->
-      <!-- <div><a href="./Regan_Heckscher_Resume.pdf">Download PDF résumé</a></div> -->
-    </footer>
+    <footer>Last updated November 2026</footer>
   </div>
 </body>
 </html>
